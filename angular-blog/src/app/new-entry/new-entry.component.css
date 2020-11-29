@@ -1,0 +1,36 @@
+#newEntryDiv{
+    font-size: 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+    color: #0f67ff
+}
+
+button {
+    background-color:  #3268fc;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+button:hover{
+    color : #ffc821;
+}
+
+h2{
+    color: #0f67ff
+}
+
+textarea { 
+    font-size: 18px; 
+}
+
+input {
+     font-size: 24px; 
+}

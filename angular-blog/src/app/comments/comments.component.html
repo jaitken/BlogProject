@@ -1,0 +1,34 @@
+<div class="commentList">
+    <div>
+        <div class="newDiv">
+            <div class="titleDiv">
+                <h4>Comments</h4>
+            </div>
+                <div *ngIf="addButtonDiv">
+                    <button class="addButton" (click)="showAddCommentDiv()">
+                        Add Comment
+                    </button>
+                </div>
+        </div>
+        <div class="enterCommentDiv" *ngIf="submitDiv">
+            <label>Enter Comment:
+                <br/>
+                <!--<input #content /> -->
+                <textarea #content id="content" cols="80" rows="4"></textarea>
+            </label>
+
+            <button class="submitButton"(click)="hideAddCommentDiv(); add(content.value);">
+                Submit
+            </button>
+        </div>
+    </div>
+
+    <ul>
+        <li *ngFor="let comment of comments">
+            <div class="commentDiv">
+                <h3>{{comment.content}}</h3>
+                <button class="delete" title="delete comment"(click)="delete(comment)">x</button>
+            </div>
+        </li>
+    </ul>
+</div>

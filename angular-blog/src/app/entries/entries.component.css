@@ -1,20 +1,69 @@
 .entryDiv {
-    max-width: 600px;
-    margin : auto;
-    border: 3px solid green;
-    padding: 0px;
+    padding-left: 5px;
+    clear: both;
+    border: 3px solid #488bff;
+    border-radius: 10px 0px 0px 0px;
+    text-align: left;
+    float: left;
+    background-color: #EEE;
+    margin-bottom: 10px;
+    height : 80px;
+    border-right: none;
+    min-width: 400px;
+    margin-left:80px;
+    
+}
+.entryDiv:hover {
+    background-color: #E5E5E5;
+}
+
+.entryDiv:hover h3{
+    color: orange;
+
 }
 
 .entryList {
     max-width: 700px;
+    min-height: 100px;
+    overflow: hidden;
     margin : auto;
-    border: 3px solid black;
     padding: 0px;
+}
 
-    
+.buttonDiv{
+    margin-top: 0px;
+    float: right;
+    min-height: 5px;
+    min-width: 15px;
+    border: 3px solid #488bff;
+    border-radius: 0px 8px 8px 0px;
+    height : 65px;
+    padding-top: 15px;
+    padding-left: 4px;
+    background-color: #488bff;
+    color: white;
+}
+
+.buttonDiv:hover{
+    cursor: pointer;
+    background-color: #3268fc;
+    border: 3px solid #3268fc;
+    color:red;
 }
 
 ul{
     width: 90%;
     list-style-type: none;
+}
+
+li{
+    height: auto;
+    display:block;
+    float:left;
+}
+
+h3{
+    text-decoration: none;
+    font-size: 25px;
+    color: #3268fc;
 }

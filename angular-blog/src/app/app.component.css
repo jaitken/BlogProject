@@ -1,0 +1,39 @@
+li {
+    display: inline;
+    margin-right: 25px;
+}
+
+#topPage{
+  overflow: hidden;
+  background-color:#488bff;
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+}
+#navDiv{
+    background-color: #3268fc;
+    padding-left: 40px;
+    padding-top: 8px;
+}
+
+#titleDiv{
+    padding-left: 40px;
+}
+
+h1 {
+    color: #ffc821;
+}
+
+nav{
+    color: white;
+}
+
+a {
+    font-size: 20px;
+    color : white;
+    text-decoration: none;
+    
+}
+
+a:hover {
+    color : #ffc821; 
+}

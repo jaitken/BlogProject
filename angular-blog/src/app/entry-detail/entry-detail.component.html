@@ -1,0 +1,8 @@
+<div *ngIf="entry">
+    <div class="entryDiv">
+      <h2>{{entry.title}}</h2>
+      <div>{{entry.content}}</div>
+    </div> 
+</div>
+
+<app-comments [entryId]='id'></app-comments>

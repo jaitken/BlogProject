@@ -1,0 +1,30 @@
+
+<div id="pageDiv">
+  <div id="newEntryDiv">
+    <h2>Add a new entry</h2>
+    <div>
+        <label>Title:
+          <input #title />
+        </label>
+        <br/>
+        <br/>
+        <label>
+            Content:
+            <br>
+            <!--<input #content /> -->
+            <textarea #content id="content" cols="80" rows="6"></textarea>
+        </label>
+        <!-- (click) passes input value to add() and then clears the input -->
+        <br/>
+        <br/>
+        <div>
+          <button routerLink="/entries">
+            Cancel
+          </button>
+          <button routerLink="/entries" (click)="add(title.value, content.value); title.value=''; content.value='';">
+            Add Entry
+          </button>
+        </div>
+    </div>
+  </div>
+</div>

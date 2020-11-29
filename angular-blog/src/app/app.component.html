@@ -1,2 +1,12 @@
-<h1>{{title}}</h1>
-<app-entries></app-entries>
+<div id="topPage">
+    <div id="titleDiv">
+        <h1>{{title}}</h1>
+    </div>
+    <div id="navDiv">
+        <nav>
+            <li><a routerLink="/entries">All</a></li>
+            <li><a routerLink="/newEntry">New</a></li>
+        </nav>
+    </div>
+</div>
+<router-outlet></router-outlet>

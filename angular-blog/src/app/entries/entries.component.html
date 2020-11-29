@@ -1,11 +1,15 @@
 <div class="entryList">
-    <h2>Entries</h2>
-    <ul>
+    
+    <ul class="entries">
         <li *ngFor="let entry of entries">
+          <a routerLink="/detail/{{entry.id}}">
             <div class="entryDiv">
                 <h3>{{entry.title}}</h3>
-                <div>{{entry.content}}</div>
             </div>
+          </a>
+          <div class="buttonDiv" (click)="delete(entry)">
+            <p>X</p>
+          </div>
         </li>
     </ul>
 </div>

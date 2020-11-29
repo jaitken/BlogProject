@@ -1,5 +1,5 @@
 export interface Entry{
-    id: number;
+    id?: number;
     title: string;
     content: string;
 }
