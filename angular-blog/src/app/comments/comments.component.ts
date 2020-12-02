@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {Comment} from '../Comment';
 import {CommentService} from '../comment.service'
+import { TokenStorageService } from '../token-storage.service';
 
 @Component({
   selector: 'app-comments',
@@ -8,17 +9,30 @@ import {CommentService} from '../comment.service'
   styleUrls: ['./comments.component.css']
 })
 export class CommentsComponent implements OnInit {
+  
   comments: Comment[];
   @Input() entryId: number;
+  @Input() entryOwner: string;
   
   addButtonDiv:boolean=true;
   submitDiv:boolean=false;
 
+  ownerViewing:boolean = false;
+
   constructor(
-    private commentService: CommentService
+    private commentService: CommentService,
+    private tokenServ: TokenStorageService
   ) { }
 
   ngOnInit(): void {
+    
+    if(this.entryOwner === this.tokenServ.getUser().userName){
+      console.log("Owner is viewing")
+      this.ownerViewing = true;
+    }else{
+      this.ownerViewing = false;
+    }
+
     this.getCommentsforEntry(this.entryId);
   }
 

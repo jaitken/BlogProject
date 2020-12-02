@@ -27,7 +27,9 @@
         <li *ngFor="let comment of comments">
             <div class="commentDiv">
                 <h3>{{comment.content}}</h3>
-                <button class="delete" title="delete comment"(click)="delete(comment)">x</button>
+                <div *ngIf="ownerViewing">
+                    <button class="delete" title="delete comment"(click)="delete(comment)">x</button>
+                </div>
             </div>
         </li>
     </ul>

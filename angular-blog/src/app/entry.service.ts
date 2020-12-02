@@ -4,6 +4,7 @@ import { MessageService } from './message.service';
 import {Entry} from './Entry';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
+import { TokenStorageService } from './token-storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -21,10 +22,21 @@ export class EntryService {
 
   constructor(
     private http: HttpClient,
-    private messageService: MessageService) { }
+    private messageService: MessageService,
+    private tokenServ: TokenStorageService
+    ) { }
 
   getEntries(): Observable<Entry[]>{
     return this.http.get<Entry[]>(this.entriesUrl).pipe(
+      tap(_ => this.log('fetched entries')),
+      catchError(this.handleError<Entry[]>('getEntries', []))
+    );
+  }
+
+  getEntriesForCurrentUser(): Observable<Entry[]>{
+    let username: string = this.tokenServ.getUser().userName;
+    const url = `${this.entriesUrl}/${username}`;
+    return this.http.get<Entry[]>(url).pipe(
       tap(_ => this.log('fetched entries')),
       catchError(this.handleError<Entry[]>('getEntries', []))
     );

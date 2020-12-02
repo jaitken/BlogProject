@@ -4,6 +4,7 @@ import {EntryService} from '../entry.service';
 
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { TokenStorageService } from '../token-storage.service';
 
 @Component({
   selector: 'app-new-entry',
@@ -13,6 +14,7 @@ import { Location } from '@angular/common';
 export class NewEntryComponent implements OnInit {
 
   constructor(private entryService: EntryService,
+              private tokenServ: TokenStorageService,
               private route: ActivatedRoute,
               private location: Location) { }
 
@@ -22,11 +24,12 @@ export class NewEntryComponent implements OnInit {
   add(title: string, content: string): void{
     title = title.trim();
     content = content.trim();
+    let username: string = this.tokenServ.getUser().userName;
     if(!title || !content){
       return;
     }
 
-    let entry : Entry = {title, content};
+    let entry : Entry = {username, title, content};
 
     this.entryService.addEntry(entry)
     .subscribe(newEntry => {

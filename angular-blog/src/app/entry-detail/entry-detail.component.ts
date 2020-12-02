@@ -5,21 +5,26 @@ import { Location } from '@angular/common';
 import {EntryService} from '../entry.service';
 import {CommentService} from '../comment.service';
 import {CommentsComponent} from '../comments/comments.component'
+import { TokenStorageService } from '../token-storage.service';
 
 @Component({
   selector: 'app-entry-detail',
   templateUrl: './entry-detail.component.html',
   styleUrls: ['./entry-detail.component.css']
 })
+
+//class used for showing full entry, comment section component attached in html
 export class EntryDetailComponent implements OnInit {
-  //@Input() entry: Entry;
+
   entry: Entry;
   id: number;
+
 
   constructor(
     private route: ActivatedRoute,
     private entryService: EntryService,
     private location: Location,
+    private tokenServ: TokenStorageService
   ) { }
 
   ngOnInit(): void {
@@ -30,7 +35,9 @@ export class EntryDetailComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.id = id;
     this.entryService.getEntry(id)
-      .subscribe(entry => this.entry = entry)
+      .subscribe(entry => {
+        this.entry = entry
+      });
   }
 
   

@@ -1,7 +1,7 @@
 
 <div id="pageDiv">
   <div id="newEntryDiv">
-    <h2>Add a new entry</h2>
+    <h2>Add a new Note</h2>
     <div>
         <label>Title:
           <input #title />
@@ -22,7 +22,7 @@
             Cancel
           </button>
           <button routerLink="/entries" (click)="add(title.value, content.value); title.value=''; content.value='';">
-            Add Entry
+            Add Note
           </button>
         </div>
     </div>

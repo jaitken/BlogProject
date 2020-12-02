@@ -1,0 +1,19 @@
+<div *ngIf="!isLoggedIn" class="container">
+    <h2>Create a new account</h2>
+    <br/>
+    <form (ngSubmit)="onSubmit()">
+        <label>Username: </label>
+        <input name="username" [(ngModel)]="req.username"/>
+        <br/>
+        <label>Email: </label>
+        <input  type="email" name="email" [(ngModel)]="req.email"/>
+        <br/>
+        <label>Password (must be between 6 and 40 characters): </label>
+        <input type="password" name="password" [(ngModel)]="req.password"/>
+        <br/>
+        <label>Confirm password: </label>
+        <input type="password" name="confrimPassword" [(ngModel)]="confirmPassword"/>
+        <br/>
+        <button>Create Account</button>
+    </form>
+</div>

@@ -1,0 +1,12 @@
+<div *ngIf="!isLoggedIn" class="container">
+    
+        <label>Username: </label>
+        <input name="username" type="text" [(ngModel)]="req.username"/>
+        <br/>
+        <label>Password: </label>
+        <input name="password" type="password" [(ngModel)]="req.password"/>
+        <br/>
+        <button type="button" (click)="onClick()">login</button>
+
+        <br/><a routerLink="/signup">Don't have an account? <br/>Click here to create a new one</a>
+</div>

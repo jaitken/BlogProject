@@ -1,0 +1,39 @@
+.container{
+    text-align: center;
+    width: 800px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+input{
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+button {
+    background-color:  #0f67ff;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+button:hover{
+    color : #ffc821;
+    background-color:  #3268fc;
+    cursor: pointer;
+}
+
+label{
+    color: #3268fc;
+}
+
+h2{
+    color: #3268fc;
+    font-size: 32px;
+    margin-bottom: 0px;
+}

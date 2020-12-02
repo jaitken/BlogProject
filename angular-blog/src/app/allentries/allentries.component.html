@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="entryList">
+        <div class="noEntryDiv" *ngIf="isListEmtpy">
+          <h3>No notes found</h3>
+        </div>
+        <ul class="entries">
+            <li *ngFor="let entry of entries">
+              <a routerLink="/detail/{{entry.id}}">
+                <div class="entryDiv">
+                    <h3>{{entry.title}}</h3>
+                    <!---<p>{{entry.username}}<p>--->
+                </div>
+              </a>
+              
+            </li>
+        </ul>
+    </div>
+  </div>

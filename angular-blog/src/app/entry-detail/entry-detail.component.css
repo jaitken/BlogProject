@@ -5,7 +5,7 @@
     white-space: pre-wrap;
     margin-bottom: 20px;
     padding-bottom: 20px;
-    border-bottom: 4px dotted blue;
+    border-bottom: 4px solid #0f67ff;
       
 }
 
@@ -13,4 +13,8 @@ h2{
     font-size: 28px;
     color: #0f67ff;
     text-align: center;
+}
+
+.userDiv{
+    margin-top: 10px;
 }

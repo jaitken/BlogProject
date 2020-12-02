@@ -2,7 +2,9 @@
     <div class="entryDiv">
       <h2>{{entry.title}}</h2>
       <div>{{entry.content}}</div>
+      <div class="userDiv">-{{entry.username}}</div>
     </div> 
 </div>
-
-<app-comments [entryId]='id'></app-comments>
+<div *ngIf="entry">
+<app-comments [entryOwner]="entry.username" [entryId]='id'></app-comments>
+</div>

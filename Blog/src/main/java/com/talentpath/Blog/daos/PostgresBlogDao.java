@@ -32,8 +32,10 @@ public class PostgresBlogDao implements BlogDao{
 
     @Override
     public List<Entry> getEntriesByUsername(String username) {
-        return template.query("SELECT id, username, title, content FROM public.\"Entries\" \n" +
+        List<Entry> toReturn = template.query("SELECT id, username, title, content FROM public.\"Entries\" \n" +
                 "WHERE username = '"+username+"' ORDER BY id DESC;", new EntryMapper());
+        return toReturn;
+
     }
 
 
