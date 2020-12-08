@@ -94,6 +94,7 @@ public class AuthController {
 
         User toAdd = new User( request.getUsername(), request.getEmail(), encoder.encode(request.getPassword()) );
 
+        //add User role to the new user
         toAdd.getRoles().add( roleRepo.findByName(Role.RoleName.ROLE_USER).get());
 
         toAdd = userRepo.saveAndFlush(toAdd);
