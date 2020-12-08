@@ -13,6 +13,8 @@ public class InMemBlogDao implements BlogDao {
 
     List<Entry> entries = new ArrayList<>();
     List<Comment> comments = new ArrayList<>();
+    int idCountEntry = 1;
+    int idCountComment = 1;
 
     @Override
     public List<Entry> getAllEntries() {
@@ -45,6 +47,8 @@ public class InMemBlogDao implements BlogDao {
         if(entry.getTitle() == null || entry.getTitle().isEmpty() || entry.getTitle().isBlank()){
             throw new InvalidEntryException("Cannot add entry without a title");
         }
+        entry.setId(idCountEntry);
+        idCountEntry++;
         entries.add(entry);
         return entry;
     }
@@ -78,6 +82,8 @@ public class InMemBlogDao implements BlogDao {
         if(comment.getContent() == null || comment.getContent().isEmpty() || comment.getContent().isBlank()){
             throw new InvalidCommentException("cannot add comment with no content");
         }
+        comment.setId(idCountComment);
+        idCountComment++;
         comments.add(comment);
         return comment;
     }
@@ -98,5 +104,7 @@ public class InMemBlogDao implements BlogDao {
     public void reset() {
         entries.clear();
         comments.clear();
+        idCountEntry = 1;
+        idCountComment = 1;
     }
 }
