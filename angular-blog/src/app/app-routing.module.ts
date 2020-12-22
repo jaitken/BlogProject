@@ -13,7 +13,7 @@ const routes: Routes = [
   {path: 'newEntry', component: NewEntryComponent},
   {path: 'detail/:id', component: EntryDetailComponent},
   {path: 'signin', component: SigninComponent},
-  {path: 'signup', component: RegisterComponent},
+  //{path: 'signup', component: RegisterComponent},
   {path: 'allEntries', component: AllentriesComponent}
 ];
 
